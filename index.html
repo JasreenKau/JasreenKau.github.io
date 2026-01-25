@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasreen's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: rgb(0, 0, 33);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        background-color: rgb(18, 18, 62);
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        transition:
+          color 0.3s,
+          font-size 0.3s;
+      }
+      nav ul li a:hover {
+        color: rgb(153, 153, 226);
+        font-size: 1rem;
+      }
+      nav ul li a.resume-btn {
+        margin-left: 70px;
+        display: inline-block;
+        background: rgb(18, 18, 62);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #9c97f1;
+        border: 2px solid #9c97f1;
+        border-radius: 15px;
+        font-size: 16px;
+        padding: 12px 18px;
+        text-decoration: none;
+      }
+      nav ul li a.resume-btn:hover {
+        background: rgb(153, 153, 226);
+        color: white;
+        transform: translateY(-2px);
+      }
+      main hr {
+        border: 0;
+        background: #9c97f1;
+        height: 1.2px;
+        margin: 20px 84px;
+      }
+      .left {
+        font-size: 1.8rem;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 30px 0;
+        height: 450px;
+      }
+      .firstSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        font-size: 1.8rem;
+      }
+      .leftSection .buttons {
+        padding: 75px 0;
+      }
+      .leftSection .bio {
+        padding: 10px 0;
+        font-size: 14px;
+        color: rgb(206, 198, 198);
+      }
+      .rightSection img {
+        width: 80%;
+      }
+      .purple {
+        color: rgb(170, 107, 228);
+      }
+      #element {
+        color: rgb(170, 107, 228);
+      }
+      .secondSection {
+        max-width: 80vw;
+        margin: 40px auto;
+        text-align: center;
+        height: 100vh;
+      }
+      .timeline {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding: 5px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .timeline-card {
+        flex: 0 0 300px;
+        height: 430px;
+        width: 400px;
+        background-color: #1e1e4b;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+        width: 100%;
+        font-size: 1.8rem;
+        color: rgb(170, 107, 228);
+      }
+      .timeline-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(170, 107, 228, 0.6);
+      }
+      .timeline-card img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        margin: 0 auto 10px;
+        border: 2px solid rgb(170, 107, 228);
+      }
+      .timeline-card h3 {
+        font-size: 1.2rem;
+        color: rgb(170, 107, 228);
+        margin-bottom: 8px;
+      }
+      .timeline-date {
+        font-size: 0.9rem;
+        color: rgb(206, 198, 198);
+        margin-bottom: 6px;
+        font-style: italic;
+      }
+      .timeline-location {
+        display: inline-block;
+        background-color: rgb(170, 107, 228, 0.2);
+        color: rgb(170, 107, 228);
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+      .timeline-card p {
+        font-size: 0.9rem;
+        color: rgb(220, 220, 220);
+        line-height: 1.4;
+      }
+      .thirdSection {
+        width: 100%;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+        padding: 5px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .project-card {
+        flex: 0 0 300px;
+        background-color: #1e1e4b;
+        border-radius: 16px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 12px rgba(170, 107, 228, 0.25);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 380px;
+        height: 440px;
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        position: relative;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 20px rgba(170, 107, 228, 0.5);
+      }
+      .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        border-bottom: none;
+      }
+      .project-content {
+        padding: 15px;
+        text-align: left;
+      }
+      .project-content h3 {
+        font-size: 1.1rem;
+        color: rgb(170, 107, 228);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .project-content h5 {
+        font-size: 0.78rem;
+        color: rgb(170, 107, 228);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .project-date {
+        font-size: 0.85rem;
+        color: rgb(200, 200, 200);
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+      .skills-used {
+        font-size: 0.85rem;
+        color: #9c97f1;
+        margin-bottom: 10px;
+      }
+      .project-buttons {
+        display: flex;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        justify-content: space-around;
+        opacity: 1;
+        transition: opacity 0.4s ease;
+        gap: 12px;
+        margin-top: 1px;
+      }
+      .project-buttons a {
+        flex: 1;
+        text-align: center;
+        text-decoration: none;
+        background: rgb(170, 107, 228);
+        color: white;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      .project-buttons a:hover {
+        background: rgb(150, 87, 218);
+        transform: scale(1.05);
+      }
+      @media (max-width: 1024px) {
+        .projects-container {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 30px 40px;
+        }
+      }
+      @media (max-width: 640px) {
+        .projects-container {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+      }
+      .skillsSection {
+        background-color: rgb(0, 0, 33);
+        padding: 50px 20px;
+        color: white;
+        text-align: center;
+      }
+      .skills {
+        margin-top: 10px;
+      }
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 5px;
+      }
+      .skill-list li {
+        background-color: rgb(255, 255, 255, 0.1);
+        color: rgb(255, 255, 255);
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+      .skills-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: rgb(170, 107, 228);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 30px 80px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .skill-card {
+        background-color: rgb(18, 18, 62);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 12px rgba(170, 107, 228, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(170, 107, 228, 0.4);
+      }
+      .skill-card h3 {
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .skill-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      .skill-icons img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+      .skill-icons img:hover {
+        transform: scale(1.15);
+      }
+      .skill-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: white;
+        transition: transform 0.3s ease;
+        border: 1.5px solid;
+      }
+      .skill-item img {
+        width: 24px;
+        height: 24px;
+      }
+      .skill-item:hover {
+        transform: scale(1.1);
+      }
+      .html {
+        border-color: #e44d26;
+      }
+      .css {
+        border-color: #264de4;
+      }
+      .js {
+        border-color: #f0db4f;
+      }
+      .python {
+        border-color: #3776ab;
+      }
+      .mysql {
+        border-color: #00758f;
+      }
+      .cpp {
+        border-color: #004482;
+      }
+      .c {
+        border-color: #555;
+      }
+      .r {
+        border-color: #1f65a7;
+      }
+      .git {
+        border-color: #f05032;
+      }
+      .github {
+        border-color: #6e5494;
+      }
+      .vscode {
+        border-color: #007acc;
+      }
+      .canva {
+        border-color: #00c4cc;
+      }
+      .excel {
+        border-color: #217346;
+      }
+      .ppt {
+        border-color: #d24726;
+      }
+      .educationSection {
+        max-width: 80vw;
+        margin: 60px auto;
+        text-align: center;
+        color: white;
+      }
+      .educationSection .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 1px;
+      }
+      .educationSection .timeline-card {
+        flex: 1 1 300px;
+        max-width: 400px;
+        min-height: 400px;
+        background-color: #1e1e2f;
+        border: 2px solid #aa6be4;
+        border-radius: 16px;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .educationSection .timeline-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 18px rgba(170, 107, 228, 0.4);
+      }
+      .educationSection .timeline-card img {
+        width: 100%;
+        height: 110px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: none;
+      }
+      .contactSection {
+        background-color: rgb(0, 0, 33);
+        padding: 10px 20px;
+        text-align: center;
+        color: white;
+      }
+      .contactSection h1 {
+        font-size: 1.8rem;
+        color: rgb(170, 107, 228);
+        margin-bottom: 6px;
+      }
+      .contact-desc {
+        font-size: 0.95rem;
+        align-items: center;
+        color: rgb(200, 200, 200);
+        margin-bottom: 25px;
+      }
+      .contact-form {
+        background-color: #1e1e4b;
+        border-radius: 16px;
+        max-width: 550px;
+        margin: auto;
+        padding: 30px;
+        padding-right: 50px;
+        box-shadow: 0 0 15px rgba(170, 107, 228, 0.15);
+        text-align: left;
+      }
+      .contact-form h3 {
+        margin-bottom: 16px;
+        font-size: 1.4rem;
+        color: rgb(170, 107, 228);
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        background-color: rgb(30, 30, 60);
+        color: white;
+        font-size: 0.95rem;
+      }
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: rgb(180, 180, 180);
+      }
+      .contact-form button {
+        background-color: rgb(170, 107, 228);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+      .contact-form button:hover {
+        background-color: rgb(150, 87, 218);
+        box-shadow: 0 0 12px rgba(170, 107, 228, 0.5);
+      }
+      .footer {
+        height: 200px;
+        background-color: #15152a;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer-first h3 {
+        color: #9c97f1;
+        margin-bottom: 20px;
+      }
+      .footer-second ul {
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-second ul li a {
+        white-space: nowrap;
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: 550;
+        transition:
+          color 0.3s,
+          font-size 0.3s;
+      }
+      .footer-second ul li a:hover {
+        color: rgb(153, 153, 226);
+        font-size: 1rem;
+      }
+      .footer ul {
+        display: flex;
+        justify-content: center;
+      }
+      .footer ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+      .footer-third ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 20px 0 0 0;
+      }
+      .footer-third ul li {
+        list-style: none;
+      }
+      .footer-third ul li a {
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+      .footer-third ul li a:hover {
+        color: rgb(153, 153, 226);
+      }
+      .footer > div {
+        width: 223px;
+      }
+      footer .footer-rights {
+        background-color: #15152a;
+        font-size: 14px;
+        text-align: center;
+        columns: rgb(82, 81, 81);
+        padding: 12px 0;
+        padding-bottom: 50px;
+      }
+      p.role-desc {
+        font-size: 0.65rem;
+        line-height: 1.6;
+        color: #d6d6f5;
+      }
+      p.edu-desc {
+        font-size: 0.7rem;
+        line-height: 1.6;
+        color: #d6d6f5;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="about">
+      <nav>
+        <div class="left">
+          <i class="fa-solid fa-user-tie"></i>
+          Portfolio
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+              <a
+                href="assets/resume/jasreen_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resume-btn"
+              >
+                View Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, My name is <span class="purple">Jasreen</span>
+          <div>and I am an aspiring</div>
+          <span id="element"></span>
+          <div class="bio">
+            <p>
+              I am a B.Tech student in Electronics and Communication Engineering
+              with AI (ECE-AI) at IGDTUW, Delhi, with strong foundation in C++
+              and Python. I have worked on projects like movie recommendation
+              system and speech detection tools, focusing on efficiency and
+              innovation. My core interests lie in software development, data
+              analytics, and problem-solving. I'm always eager to collaborate,
+              learn and contribute to tech that makes a difference.
+            </p>
+            <p>
+              Let’s connect and explore what makes both tech and life exciting!
+            </p>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="assets/images/profile/jas_photo.jpeg" />
+        </div>
+      </section>
+      <hr />
+      <section class="secondSection" id="experience">
+        <h1>Work Experience</h1>
+        <p
+          style="
+            text-align: center;
+            color: rgb(200, 200, 200);
+            margin-top: 10px;
+          "
+        >
+          Gained hands-on experience as an intern, contributing to the
+          development and deployment of impactful projects.
+        </p>
+        <div class="timeline">
+          <div class="timeline-card">
+            <img
+              src="assets/images/experience/cv_dl_intern.jpeg"
+              alt="CV DL Intern"
+            />
+            <h3>CV DL Intern</h3>
+            <p class="timeline-date">Jun 2025 - Aug 2025</p>
+            <p class="timeline-location">Anveshan Foundation, IGDTUW, Delhi</p>
+            <p class="role-desc">
+              Optimized CNN models using PyTorch, TensorFlow, and OpenCV.
+              Contributed to the implementation of “Multi-Disease Diagnosis from
+              Chest X-Rays”, achieving 89.6% accuracy on 112k images through
+              effective preprocessing and tuning.
+            </p>
+            <div class="skills">
+              <strong>Skills:</strong>
+              <ul class="skill-list">
+                <li>Computer Vision</li>
+                <li>Deep Learning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <img
+              src="assets/images/experience/research_intern.png"
+              alt="Research Intern"
+            />
+            <h3>Research Intern</h3>
+            <p class="timeline-date">Jun 2024 - Sept 2024</p>
+            <p class="timeline-location">IGDTUW, Delhi</p>
+            <p class="role-desc">
+              Collaborated with faculty and research peers to design, simulate,
+              and analyze a microstrip patch antenna using ANSYS HFSS.
+              Contributed to design optimization, simulation analysis and result
+              interpretation. The work resulted in a peer-reviewed publication
+              on IEEE Xplore.
+            </p>
+            <div class="skills">
+              <strong>Skills:</strong>
+              <ul class="skill-list">
+                <li>Antenna Design</li>
+                <li>Research</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <img src="assets/images/experience/ml_intern.jpg" alt="ML Intern" />
+            <h3>Python ML Intern</h3>
+            <p class="timeline-date">Jun 2023 - Jul 2023</p>
+            <p class="timeline-location">
+              COE-AI, AI Club IGDTUW and Anveshan Foundation, Delhi
+            </p>
+            <p class="role-desc">
+              Built and optimized ML models using Scikit-learn, TensorFlow, and
+              Python, achieving 15% performance gains, collaborating across
+              teams, standardizing pipelines, and deploying models with
+              Streamlit and Flask for interactive inference.
+            </p>
+            <div class="skills">
+              <strong>Skills:</strong>
+              <ul class="skill-list">
+                <li>Python</li>
+                <li>Machine Learning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="thirdSection" id="projects">
+        <h1>Projects</h1>
+        <p
+          style="
+            text-align: center;
+            color: rgb(200, 200, 200);
+            margin-top: 10px;
+          "
+        >
+          I’ve worked on diverse projects combining AI, software development,
+          and data analytics.
+        </p>
+        <div class="projects-container">
+          <div class="project-card">
+            <img
+              src="assets/images/projects/customer_behavior_analysis.png"
+              alt="Customer Behavior Analysis"
+            />
+            <div class="project-content">
+              <h3>Customer Behavior Analysis</h3>
+              <p class="project-date">Oct 2025 - Dec 2025</p>
+              <div class="skills-used">Python • Power BI • PostgreSQL</div>
+              <p class="role-desc">
+                Analyzed customer shopping data using Python, SQL, and Power BI
+                to identify purchasing trends and deliver actionable insights
+                through dashboards.
+              </p>
+            </div>
+            <div class="project-buttons">
+              <a
+                href="https://github.com/JasreenKau/customer_shopping_behavior_analysis"
+                target="_blank"
+                >View Code</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/projects/chest_xray.png"
+              alt="Multi-Disease Chest X-Ray"
+            />
+            <div class="project-content">
+              <h5>Multi-Disease Diagnosis from Chest X-Rays</h5>
+              <p class="project-date">Jun 2025 - Aug 2025</p>
+              <div class="skills-used">
+                Python • TensorFlow • Keras • OpenCV
+              </div>
+              <p class="role-desc">
+                Built a deep learning-based system to perform multi-label
+                classification of 14 thoracic diseases on the NIH ChestX-ray14
+                dataset (112k+ images), using an end-to-end training,
+                evaluation, and prediction pipeline.
+              </p>
+            </div>
+            <div class="project-buttons">
+              <a
+                href="https://github.com/JasreenKau/MultiDisease-ChestXray"
+                target="_blank"
+              >
+                View Code
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/projects/homepage.png"
+              alt="Movie Recommender System"
+            />
+            <div class="project-content">
+              <h3>Movie Recommender System</h3>
+              <p class="project-date">Jan 2025 - Feb 2025</p>
+              <div class="skills-used">
+                Python • Streamlit • Flask • TMDB API
+              </div>
+              <p class="role-desc">
+                Developed a content-based movie recommender engine using TMDB
+                metadata and cosine similarity for personalized suggestions,
+                with a Streamlit app displaying real-time posters, ratings and
+                descriptions, creating a production-ready platform suitable for
+                integration with OTT services like Netflix.
+              </p>
+            </div>
+            <div class="project-buttons">
+              <a
+                href="https://github.com/JasreenKau/movie-recommender"
+                target="_blank"
+                >View Code</a
+              >
+              <a
+                href="https://movie-recommender-zpxdjwgmprvz9zptt7vuog.streamlit.app/"
+                target="_blank"
+                >View Live App</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skillsSection" id="skills">
+        <h1 class="skills-heading">Skills</h1>
+        <p
+          style="
+            text-align: center;
+            color: rgb(200, 200, 200);
+            margin-top: 10px;
+          "
+        >
+          Here are some of my skills on which I have been working on for the
+          past few years.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <div class="skill-icons">
+              <div class="skill-item html">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                /><span>HTML</span>
+              </div>
+              <div class="skill-item css">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                /><span>CSS</span>
+              </div>
+              <div class="skill-item js">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                /><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <div class="skill-icons">
+              <div class="skill-item mysql">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                /><span>MySQL</span>
+              </div>
+              <div class="skill-item postgresql">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                />
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item python">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                /><span>Python</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Languages</h3>
+            <div class="skill-icons">
+              <div class="skill-item cpp">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                /><span>C++</span>
+              </div>
+              <div class="skill-item c">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                /><span>C</span>
+              </div>
+              <div class="skill-item python">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                /><span>Python</span>
+              </div>
+              <div class="skill-item r">
+                <img
+                  src="https://www.r-project.org/logo/Rlogo.png"
+                  style="width: 30px"
+                /><span>R</span>
+              </div>
+              <div class="skill-item js">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                /><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Others</h3>
+            <div class="skill-icons">
+              <div class="skill-item git">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                /><span>Git</span>
+              </div>
+              <div class="skill-item github">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                /><span>GitHub</span>
+              </div>
+              <div class="skill-item vscode">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                  alt="VS Code"
+                />
+                VS Code
+              </div>
+              <div class="skill-item canva">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg"
+                  alt="Canva"
+                  style="filter: invert(1)"
+                />
+                <span>Canva</span>
+              </div>
+              <div class="skill-item excel">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftexcel.svg"
+                  alt="Excel"
+                  style="filter: invert(1)"
+                />
+                <span>Excel</span>
+              </div>
+              <div class="skill-item powerbi">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/powerbi.svg"
+                  alt="Power BI"
+                  style="filter: invert(1)"
+                />
+                <span>Power BI</span>
+              </div>
+              <div class="skill-item ppt">
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftpowerpoint.svg"
+                  alt="PowerPoint"
+                  style="filter: invert(1)"
+                />
+                <span>PowerPoint</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="educationSection" id="education">
+        <h1>Education</h1>
+        <p
+          style="
+            text-align: center;
+            color: rgb(200, 200, 200);
+            margin-top: 10px;
+          "
+        >
+          From foundational schooling to specialized studies, my education has
+          empowered me to explore, adapt and grow.
+        </p>
+        <div class="timeline">
+          <div class="timeline-card">
+            <img src="assets/images/education/igdtuw.jpg" alt="IGDTUW Logo" />
+            <h3>B.Tech - ECE-AI</h3>
+            <p class="timeline-date">Nov 2022 - May 2026</p>
+            <p class="timeline-location">IGDTUW, Delhi</p>
+            <p><strong>CGPA:</strong> 7.41</p>
+            <p class="edu-desc">
+              Pursuing B.Tech in ECE-AI, with a strong passion for Data
+              Analytics and Software Engineering. Focused on strengthening DSA
+              skills and advancing expertise in data-driven technologies.
+              Actively participated in organizing society events and contests,
+              demonstrating teamwork, leadership, and collaboration skills.
+            </p>
+          </div>
+          <div class="timeline-card">
+            <img
+              src="assets/images/education/banasthali.png"
+              alt="Senior Secondary School Logo"
+            />
+            <h3>Class XII - CBSE</h3>
+            <p class="timeline-date">Apr 2021 - Mar 2022</p>
+            <p class="timeline-location">Banasthali Public School, Delhi</p>
+            <p><strong>Grade:</strong> 92.4%</p>
+            <p class="edu-desc">
+              Specialized in Physics, Chemistry, and Mathematics and actively
+              participated in co-curricular activities and quiz competitions to
+              broaden knowledge and develop problem-solving skills. Excelled
+              academically, earning the distinction of subject topper in
+              English, Chemistry, and Computer Science.
+            </p>
+          </div>
+          <div class="timeline-card">
+            <img
+              src="assets/images/education/banasthali.png"
+              alt="School Logo"
+            />
+            <h3>Class X - CBSE</h3>
+            <p class="timeline-date">Apr 2019 - Mar 2020</p>
+            <p class="timeline-location">Banasthali Public School, Delhi</p>
+            <p><strong>Grade:</strong> 95.6%</p>
+            <p class="edu-desc">
+              My curriculum included English, Sanskrit, Mathematics, Science,
+              Social Studies, and Hindi providing a well-rounded academic
+              foundation. Secured first position in overall class and actively
+              participated in activities such as quiz contests, debates, art,
+              and music, enhancing my communication skills and creativity.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="contactSection" id="contact">
+        <h1>Contact</h1>
+        <p class="contact-desc">
+          Feel free to reach out to me for any questions or opportunities!
+        </p>
+        <div class="contact-form">
+          <h3>Email Me 🚀</h3>
+          <form
+            action="https://formsubmit.co/jasreen2404@gmail.com"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Portfolio Contact!"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Message"
+              required
+            ></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Jasreen</h3>
+        </div>
+        <div class="footer-second">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-third">
+          <ul>
+            <li>
+              <a href="https://github.com/JasreenKau" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://x.com/jasreen2404" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jasreen-kaur-7b87b6256/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@jasreenkaur7347"
+                target="_blank"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-rights">
+        &#169; 2026 Jasreen | All rights reserved.
+      </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Software Engineer", "Data Analyst", "Mentor"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
